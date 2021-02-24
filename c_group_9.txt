@@ -1,0 +1,105 @@
+_____________________________________________________________________________________________________
+
+
+
+***************************
+C Programming Project
+ __  __  __      __     __
+| __ |_| | | | | |_| __ |_|
+|__| |\_ |_| |_| |      __|
+
+***************************
+
+AIM:
+^^^ 
+	
+	Source format: 24-bit BMP
+	Destination format: ICO
+
+INSTRUCTIONS:
+^^^^^^^^^^^^
+	
+	STEP_1: Unzip the folder Group_9.zip
+	
+	STEP_2: Navigate to the Group_9 directory in terminal
+	
+	STEP_3: Give the following command:
+				
+		    		-> make
+		    
+		    This will create a file by the name of "my_project"!
+	
+	STEP_4: Give the following command:
+				
+				-> ./my_project "source_file_name" "destination_file_name"
+                                  ^^^^^^^^^^^^^^^^   ^^^^^^^^^^^^^^^^^^^^^
+               				    (In .BMP Format)      (In .ICO Format)
+             
+			This code will create a file by the name of your inputed destination file name!
+			You may open that file in appropriate image viewer to view it!
+
+    STEP_5: For converting another image, give the following command:
+
+				-> make clean
+		
+			Now follow the STEP_1, STEP_2, STEP_3 and STEP_4!
+
+MEMBERS:
+^^^^^^^
+	
+	IMT2020029 Vatsal Dhama	
+	IMT2020096 Nandula Satya Prasanna Koushik 
+	IMT2020117 Rahul Jain
+	IMT2020503 Arhant Arora
+	IMT2020505 Vaibhav Dandapanthula 
+	IMT2020522 Prasanth Kumar Reddy Lomada
+
+WORK DISTRIBUTION: 
+^^^^^^^^^^^^^^^^^
+	
+	 Although our whole project is the output of collective effort and collaboration of all the 
+	 team members in every part of the project; but still for better organization of our project,
+	 we divided our project into 4 parts: 
+	
+		A. BMP/ICO HEADERS (Core Contributers: Vatsal & Vaibhav):
+		   
+			-> Researched about BMP and ICO file formats. 
+			-> Understood the creation and identification of BMP and ICO structures.
+			-> Created bmp_header, dib_header, RGB, ImageData, ICONDIR, ICONDIRENTRY
+			   and BitmapInfoHeader structures.
+			-> Taught other teammates about BMP/ICO file format and provided them with various
+			   resouces and references.
+		
+		B. READING BMP FILE (Core Contributer: Rahul):
+			
+			-> Researched about reading information from the BMP file.
+			-> Created the read_bmp function.
+			-> Implemented the reading of the inputted BMP file into the BMP header.
+
+		C. WRITING ICO FILE (Core Contributer: Arhant and Prashant):
+
+			-> Researched about writing to a ICO file.
+			-> Researched about conversion of BMP to ICO.
+			-> Created writeico function.
+			-> Implemented the conversion of BMP to ICO.
+
+		D. MAKEFILE TEMPLATE (Core Contributer: Koushik):
+
+			-> Studied the creation of MAKEFILE.
+			-> Created the makefile.
+			-> Implemented the final working of code with makefile.
+
+SPECIAL THANKS TO:
+^^^^^^^^^^^^^^^^^
+				-> Proffesor Srinivas and Proffesor Vivek for clearing our lab doubts.
+				-> Proffesor Yashwant for clearing our theory doubts.
+				-> Janvi didi (our TA) for clearing all rest of our queries.
+
+
+
+_____________________________________________________________________________________________________
+
+
+	
+
+
