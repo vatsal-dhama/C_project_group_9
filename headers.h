@@ -14,7 +14,7 @@ struct dib_header {
     unsigned short int bits_per_pixel;  // The number of bits per pixel, which is the color depth of the image. 
     unsigned int compression;           // The compression method being used.
     unsigned int image_size;            // The image size. This is the size of the raw bitmap data
-    unsigned int res[4];                //
+    unsigned int res[4];                // Not important resolution data
 };
 
 struct RGB {                            //structure of pixel array
