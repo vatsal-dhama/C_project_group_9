@@ -84,7 +84,8 @@ void write_ico(FILE *fpw, struct dib_header dibheader, struct RGB picture[dibhea
             fputc(255, fpw);
         }
     }
-    
+    // These are zeroes added to the end of the image as a mask. The size of the mask is 1/32th of the size of the image.
+    //These may not be required, but it is a good practice to use them.
     for (int i = 0; i < ico_dir_entry.image_size / 32; i++) {
         fputc(0, fpw);
     }
