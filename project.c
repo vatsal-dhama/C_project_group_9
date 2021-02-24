@@ -3,7 +3,7 @@
 #pragma pack(1)
 #include "headers.h"
 
-void writeico(FILE *fpw, struct dib_header dibheader, struct RGB picture[dibheader.height][dibheader.width]);
+void write_ico(FILE *fpw, struct dib_header dibheader, struct RGB picture[dibheader.height][dibheader.width]);
 
 void read_bmp(FILE *fp, FILE *fpw) {
     struct bmp_header bmpheader;
@@ -24,13 +24,13 @@ void read_bmp(FILE *fp, FILE *fpw) {
         }
     }
 
-    writeico(fpw, dibheader, picture);
+    write_ico(fpw, dibheader, picture);
     fclose(fp);
 }
 
 // conversion and writing ico image file
 
-void writeico(FILE *fpw, struct dib_header dibheader, struct RGB picture[dibheader.height][dibheader.width]) {
+void write_ico(FILE *fpw, struct dib_header dibheader, struct RGB picture[dibheader.height][dibheader.width]) {
 
     // using user defined ico structures
 
