@@ -38,7 +38,7 @@ INSTRUCTIONS:
 			This code will create a file by the name of your inputed destination file name!
 			You may open that file in appropriate image viewer to view it!
 
-    STEP_5: For converting another image, give the following command:
+    	STEP_5: For converting another image, give the following command:
 
 				-> make clean
 		
