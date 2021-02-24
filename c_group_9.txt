@@ -92,7 +92,7 @@ WORK DISTRIBUTION:
 ACKNOWLEDGEMENT:
 ^^^^^^^^^^^^^^^^^
 				-> Professor Srinivas and Professor Vivek under whose guidance we successfully implemented the project and the makefile.
-				-> Professor Yashwant for teaaching the various theory concepts without which we couldn't have created our project.
+				-> Professor Yashwant for teaching us the various theory concepts without which we couldn't have created our project.
 				-> Ms. Janvi, our TA, for helping us wherever we were stuck.
 
 
