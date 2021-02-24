@@ -70,17 +70,17 @@ void write_ico(FILE *fpw, struct dib_header dibheader, struct RGB picture[dibhea
     int and_mask = (ico_dir_entry.image_width * ico_dir_entry.image_height) / 8;
 
     bmp_ico_header.imagesize = xor_mask + and_mask;
-    // We should write the defined structure into the ICO file.
+    // Writing the values into the defined structures of the ICO file.
     fwrite(&ico_dir_entry, sizeof(struct ICONDIRENTRY), 1, fpw);
 
     fwrite(&bmp_ico_header, sizeof(struct BitmapInfoHeader), 1, fpw);
 
-    // We should move the pixels of BMP image to their place in ICO format.
+    // Writing the image data into the ICO file.
     for (int i = dibheader.height - 1; i >= 0; i--) {
         for (int j = 0; j < dibheader.width; j ++) {
             fputc(picture[i][j].blue, fpw);
             fputc(picture[i][j].green, fpw);
-            fputc(picture[i][j].red, fpw);
+            fputc(picture[i][j].red, fpw);      // This is the Alpha channel which takes care of the transparency of the image.
             fputc(255, fpw);
         }
     }
