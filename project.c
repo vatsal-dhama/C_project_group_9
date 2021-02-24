@@ -28,55 +28,54 @@ void read_bmp(FILE *fp, FILE *fpw) {
     fclose(fp);
 }
 
-// conversion and writing ico image file
+// Converting data appropriately and writing into the ICO file.
 
 void write_ico(FILE *fpw, struct dib_header dibheader, struct RGB picture[dibheader.height][dibheader.width]) {
 
-    // using user defined ico structures
+    // Using User Defined ICO structures.
 
     struct ICONDIR ico_header;
     struct ICONDIRENTRY ico_dir_entry;
     struct BitmapInfoHeader bmp_ico_header;
 
 
-    // these variables have same values for all images
+    // Hard coding header values which are fixed for all ICO images.
     ico_header.reserved = 0;
     ico_header.image_specification = 1;
     ico_header.num_images = 1;
 
     fwrite(&ico_header.reserved, 6, 1, fpw);
 
-    // the length and width of ico image is same as the bmp image
+    // The length and width of the ICO image is same as the BMP image.
     ico_dir_entry.image_width = dibheader.width;
     ico_dir_entry.image_height = dibheader.height;
-    // these variables values are same for all images
+    // fixed values for all ICO images.
     ico_dir_entry.num_colors = 0;
     ico_dir_entry.reserve = 0;
     ico_dir_entry.color_planes = 1;
     ico_dir_entry.bits_per_pixel = 32;
-
+    // ICO images have a reserved channel after RGB values in each pixel, hence we multiply width * height by 4.
     ico_dir_entry.image_size = ico_dir_entry.image_width * ico_dir_entry.image_height * 4;
     ico_dir_entry.image_offset = 22;
 
     bmp_ico_header.header_size = 40;
     bmp_ico_header.width = dibheader.width;
-    // we need to multiply height by 2 as we need to apply two masks
+    // We need to multiply the height by 2 as we need to apply two masks.
     bmp_ico_header.height = dibheader.height * 2;
     bmp_ico_header.colourpanels = 1;
     bmp_ico_header.bitsperpixel = 32;
 
-    // we need to use xor mask and and mask to remove irregulaties on screen which will 
-    // compromise the image 
+    // We need to use XOR mask and AND mask to remove irregulaties on the screen which will compromise the image.
     int xor_mask = (ico_dir_entry.image_width * ico_dir_entry.image_height * bmp_ico_header.bitsperpixel) / 8;
     int and_mask = (ico_dir_entry.image_width * ico_dir_entry.image_height) / 8;
 
     bmp_ico_header.imagesize = xor_mask + and_mask;
-    // we should write the defined structure into the ico file
+    // We should write the defined structure into the ICO file.
     fwrite(&ico_dir_entry, sizeof(struct ICONDIRENTRY), 1, fpw);
 
     fwrite(&bmp_ico_header, sizeof(struct BitmapInfoHeader), 1, fpw);
 
-    // we should move the pixels of bmp image to their place in ico format
+    // We should move the pixels of BMP image to their place in ICO format.
     for (int i = dibheader.height - 1; i >= 0; i--) {
         for (int j = 0; j < dibheader.width; j ++) {
             fputc(picture[i][j].blue, fpw);
