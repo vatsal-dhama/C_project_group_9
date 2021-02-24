@@ -76,11 +76,11 @@ WORK DISTRIBUTION:
 			-> Created the read_bmp function.
 			-> Implemented the reading of the inputted BMP file into the BMP header.
 
-		C. WRITING ICO FILE (Core Contributer: Arhant and Prashant):
+		C. WRITING ICO FILE (Core Contributer: Arhant and Prasanth):
 
-			-> Researched about writing to a ICO file.
+			-> Researched about writing an ICO file.
 			-> Researched about conversion of BMP to ICO.
-			-> Created writeico function.
+			-> Created the code for the write_ico function.
 			-> Implemented the conversion of BMP to ICO.
 
 		D. MAKEFILE TEMPLATE (Core Contributer: Koushik):
@@ -89,11 +89,11 @@ WORK DISTRIBUTION:
 			-> Created the makefile.
 			-> Implemented the final working of code with makefile.
 
-SPECIAL THANKS TO:
+ACKNOWLEDGEMENT:
 ^^^^^^^^^^^^^^^^^
-				-> Proffesor Srinivas and Proffesor Vivek for clearing our lab doubts.
-				-> Proffesor Yashwant for clearing our theory doubts.
-				-> Janvi didi (our TA) for clearing all rest of our queries.
+				-> Professor Srinivas and Professor Vivek under whose guidance we successfully implemented the project and the makefile.
+				-> Professor Yashwant for teaaching the various theory concepts without which we couldn't have created our project.
+				-> Ms. Janvi, our TA, for helping us wherever we were stuck.
 
 
 
